@@ -11,7 +11,7 @@ quickly to build a project which uses gazira
 
 * initiliaze
   
-    # under your project directory, and type this command
+    // under your project directory, and type this command
     $: gazira init static
 
 * update
