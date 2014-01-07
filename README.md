@@ -9,16 +9,16 @@ quickly to build a project which uses gazira
     
 ## useage
 
-* initiliaze
-  
+### initiliaze
+
     // under your project directory, and type this command
     $: gazira init static
 
-* update
+### update
 
     $: gazira update static
     
-* help
+### help
 
     $: gazira
     $: gazira -h
