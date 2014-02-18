@@ -47,7 +47,7 @@ module.exports = function (grunt) {
                 expr: true, // 允许表达式用做函数调用或者语句使用
                 evil: false // 不允许使用eval和new Function
             },
-            useDefault: [staticFolderName + '/js/src/app/*.js', staticFolderName + '/js/src/app/**/*.js', '!' + staticFolderName + '/js/src/app/**/tpl/*.js']
+            app: [staticFolderName + '/js/src/app/*.js', staticFolderName + '/js/src/app/**/*.js', '!' + staticFolderName + '/js/src/app/**/tpl/*.js']
         },
         // 转化
         transport: {
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
                     {
                         cwd: staticFolderName + '/js/src',
                         expand: true,
-                        src: ['**/*.js'],
+                        src: ['**/*.js', '!lib/cmp/editor/**/*.js'],
                         dest: '.build'
                     }
                 ]
@@ -122,6 +122,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    grunt.registerTask('default', ['jshint', 'transport', 'concat', 'uglify']);
+    grunt.registerTask('app', ['jshint:app', 'transport:app', 'concat:app', 'uglify:app']);
 
 };
