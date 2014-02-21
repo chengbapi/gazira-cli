@@ -113,6 +113,12 @@ module.exports = function (grunt) {
         // 清理
         clean: {
             build: ['.build']
+        },
+        // 监听
+        watch: {
+            app: {
+
+            }
         }
     });
 
