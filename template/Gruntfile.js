@@ -103,11 +103,35 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: staticFolderName + '/js/dist/',
-                        src: '**/*.js',
+                        src: ['**/*.js', '!lib/**/*.js'],
                         dest: staticFolderName + '/js/dist/',
                         ext: '.js'
                     }
                 ]
+            }
+        },
+        // sass
+        sass: {
+            app: {
+                options: {
+                },
+                files: [{
+                    expand: true,
+                    cwd: staticFolderName + '/themes/default/scss/',
+                    src: ['**/*.scss'],
+                    dest: staticFolderName + '/themes/default/css/',
+                    ext: '.css'
+                }]
+            }
+        },
+        // CSS压缩
+        cssmin: {
+            app: {
+                expand: true,
+                cwd: staticFolderName + '/themes/default/css/',
+                src: ['**/*.css'],
+                dest: staticFolderName + '/themes/default/css/',
+                ext: '.css'
             }
         },
         // 清理
@@ -127,7 +151,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('app', ['jshint:app', 'transport:app', 'concat:app', 'uglify:app']);
+    grunt.registerTask('app', ['jshint:app', 'sass:app', 'cssmin:app', 'transport:app', 'concat:app', 'uglify:app', 'clean']);
 
 };
