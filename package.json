@@ -1,6 +1,6 @@
 {
     "name": "gazira-cli",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "quickly to build a project which uses gazira",
     "preferGlobal": "true",
     "main": "./lib/bin.js",
