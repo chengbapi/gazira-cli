@@ -17,6 +17,7 @@ Thumbs.db
 .svn/
 *.swp
 *.swo
+*.swn
 *.log
 *.class
 *.tmp_*
