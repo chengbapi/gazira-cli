@@ -11,6 +11,7 @@
 *.diff
 *.patch
 *.bak
+.gitkeep
 Thumbs.db
 .project
 .*proj
